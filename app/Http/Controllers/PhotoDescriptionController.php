@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\PhotoDescription;
 
 class PhotoDescriptionController extends Controller
 {
@@ -13,7 +14,8 @@ class PhotoDescriptionController extends Controller
      */
     public function index()
     {
-        //
+        $photoDescription = PhotoDescription::take(1)->get();
+        return view(main.photoDescription, ['photoDescription'=>$photoDescription]);
     }
 
     /**
