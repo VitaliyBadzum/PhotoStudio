@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $about = DB::table('abouts')->first();
+        $photoDescription = DB::table('photo_descriptions')->first();
+        $contact = DB::table('contacts')->first();
+        $orders = Order::all();
+
+        return view('home') 
+        ->with(compact('about'))
+        ->with(compact('photoDescription'))
+        ->with(compact('contact'))
+        ->with(compact('orders'));
     }
 }
