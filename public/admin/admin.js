@@ -15,12 +15,18 @@ $(document).ready(function () {
             return false;
         }
     });
+
     $('#inputFile').change(function(){
         var pathname = $('#inputFile').val().replace(/^.*[\\\/]/, '');
         $('#aboutPhoto').attr("src","/photo/about_photo/" + pathname);
-    })
-});
+    });
 
+
+
+
+
+});
+/*
 tinymce.init({
     selector: '.editor',
     plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
@@ -40,7 +46,7 @@ tinymce.init({
          * @param details
          * @see https://www.tiny.cloud/docs/ui-components/urldialog/#configurationoptions
          */
-        onMessage: function (dialogApi, details) {
+/*        onMessage: function (dialogApi, details) {
             if (details.mceAction === 'fileSelected') {
                 const file = details.data.file;
                 
@@ -66,4 +72,4 @@ tinymce.init({
             }
         }
     });
-}
+}*/
